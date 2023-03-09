@@ -1,0 +1,14 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+.todo-item div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

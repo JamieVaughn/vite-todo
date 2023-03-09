@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  box-shadow: 0 0 5px silver;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
