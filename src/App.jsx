@@ -4,12 +4,12 @@ import { TodoItems } from './components/TodoItems'
 import { EmptyState } from './components/EmptyState'
 import './App.css'
 
-function todoFactory (text, timestamp) {
+function todoFactory (text) {
 
   return {
     text, 
     done: false, 
-    timestamp,
+    timestamp: new Date().toLocaleString(),
   }
 }
 
@@ -18,9 +18,9 @@ function App() {
   const [todos, setTodos] = useState([])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // const data = new FormData(e.target)
-    setTodos(prev => ([...prev, todoFactory(input, e.timeStamp)])) // input <> data.get('todo')
+    setTodos(prev => ([...prev, todoFactory(input)])) // input <> data.get('todo')
     setInput('')
   }
 
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <article className="card" id="container">
         <h1 id="heading">My React Todos</h1>
-        <form onSubmit={handleSubmit}>
+        <form className="todo-form" onSubmit={handleSubmit}>
           <label htmlFor="todo-input">Submit a todo:</label>
           <input
           value={input}

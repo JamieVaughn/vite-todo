@@ -1,3 +1,4 @@
+import { TodoItem } from '../TodoItem'
 import './index.css'
 
 export const TodoItems = (props) => {
@@ -24,20 +25,12 @@ export const TodoItems = (props) => {
     <ul>
       {props.todos.map((todo, index) => {
         return (
-          <li className="todo-item" key={todo+index}>
-            <div>
-            <input 
-            onChange={() => handleCheck(todo.text)}
-            checked={todo.done}
-            type="checkbox" 
-            title="Mark done"/>
-            <span className={`todo-text ${todo.done ? 'done' : ''}`}>{todo.text}</span>
-            <button 
-            onClick={() => handleClick(todo.text)}
-            title="Delete">╳</button>
-            </div>
-            <div>{todo.timestamp}</div>
-          </li>
+          <TodoItem 
+          key={todo.timestamp} 
+          handleCheck={handleCheck} 
+          handleClick={handleClick}
+          todo={todo}
+          />
         )
       })}
     </ul>
