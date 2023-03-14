@@ -3,6 +3,7 @@ import { Footer } from './components/Footer'
 import { TodoItems } from './components/TodoItems'
 import { EmptyState } from './components/EmptyState'
 import './App.css'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 function todoFactory (text) {
 
@@ -15,7 +16,7 @@ function todoFactory (text) {
 
 function App() {
   const [input, setInput] = useState('')
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useLocalStorage('todos')
 
   const handleSubmit = (e) => {
     e.preventDefault();

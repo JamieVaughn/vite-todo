@@ -2,7 +2,6 @@ import './index.css'
 
 export const TodoItem = (props) => {
   const { todo, handleClick, handleCheck } = props
-  console.log(props)
   return (
     <li className="todo-item">
       <div>
